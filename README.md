@@ -1,43 +1,63 @@
-🌎 Dashboard de Análise de Dados Climáticos
-📋 Sobre o Projeto
-Este repositório contém meu projeto de Dashboard de Análise de Dados, desenvolvido para coletar informações meteorológicas, armazená-las de forma eficiente e exibi-las por meio de gráficos interativos. O objetivo principal é integrar coleta de dados via API, armazenamento em banco de dados, caching e visualização gráfica, otimizando a performance da aplicação.
+# 🌎 Dashboard de Análise de Dados Climáticos  
 
-Durante o desenvolvimento, aprendi sobre:
+## 📋 Sobre o Projeto  
 
-📡 Consumo de APIs (OpenWeatherMap)
-🗄️ Armazenamento de dados (MySQL)
-⚡ Caching para otimização (Redis)
-📊 Criação de gráficos interativos (Plotly)
-🔍 Visão Geral da Arquitetura
-<p align="center"> <img src="docs/dashboard-arquitetura.png" alt="Fluxo do Dashboard"> </p>
-Este fluxo representa as principais etapas do projeto:
+Este repositório contém minha implementação de um **Dashboard de Análise de Dados**, cujo objetivo é coletar, armazenar e visualizar informações meteorológicas de forma eficiente. Para isso, o projeto integra **coleta de dados via API, armazenamento em banco de dados, caching e exibição gráfica interativa**.
 
-1️⃣ Coleta de Dados: O script consulta a API de clima e obtém os dados da cidade escolhida.
-2️⃣ Armazenamento no Banco: Os dados são registrados em um banco MySQL para futuras análises.
-3️⃣ Caching com Redis: Para evitar chamadas desnecessárias à API, os dados são armazenados em cache por 1 hora.
-4️⃣ Visualização Gráfica: Os dados são processados e exibidos de forma interativa usando Plotly.
+Durante o desenvolvimento, aprendi conceitos essenciais como:
 
-⚙️ Estrutura do Código
-🔹 coleta_dados.py
-Script responsável por obter os dados climáticos da API OpenWeatherMap e exibi-los no terminal.
+- 📡 **Consumo de APIs** (OpenWeatherMap)  
+- 🗄️ **Armazenamento de dados** (MySQL)  
+- ⚡ **Uso de caching para otimização** (Redis)  
+- 📊 **Criação de gráficos interativos** (Plotly)  
 
-🔹 armazenar_dados.py
-Armazena os dados coletados no banco MySQL. Se a tabela não existir, ela será criada automaticamente.
+---
 
-🔹 caching.py
-Implementa um cache com Redis, evitando requisições repetitivas à API e melhorando a eficiência da aplicação.
+## 🔍 Fluxo do Sistema  
 
-🔹 grafico.py
-Utiliza Plotly para gerar gráficos interativos com os dados coletados.
+<p align="center">
+  <img src="docs/dashboard-arquitetura.png" alt="Fluxo do Dashboard">
+</p>  
 
-🚀 Como Executar
-1️⃣ Clone o repositório
+Este diagrama representa as etapas do projeto. Cada componente tem um papel fundamental na eficiência e funcionalidade do sistema.
 
-sh
-Copiar código
+### 🔹 **Coleta de Dados**  
+O script acessa a API do OpenWeatherMap e obtém as informações meteorológicas de uma cidade específica.  
+
+### 🔹 **Armazenamento no Banco de Dados**  
+Os dados são registrados em um banco **MySQL**, permitindo consultas futuras e análise histórica.  
+
+### 🔹 **Caching com Redis**  
+Para evitar requisições repetitivas à API, os dados são armazenados em **cache** por 1 hora.  
+
+### 🔹 **Visualização Gráfica**  
+Os dados armazenados podem ser visualizados através de gráficos interativos gerados com **Plotly**.  
+
+---
+
+## ⚙️ Estrutura do Código  
+
+### 🔹 `coleta_dados.py`  
+Obtém os dados climáticos da API **OpenWeatherMap** e os exibe no terminal.  
+
+### 🔹 `armazenar_dados.py`  
+Registra as informações no banco de dados **MySQL**, criando a tabela caso ainda não exista.  
+
+### 🔹 `caching.py`  
+Implementa **Redis** para armazenar dados temporariamente, reduzindo chamadas repetidas à API.  
+
+### 🔹 `grafico.py`  
+Gera gráficos interativos com os dados coletados, utilizando **Plotly** para visualização.  
+
+---
+
+## 💡 Como Executar  
+
+1️⃣ **Clone o repositório**:  
+```sh
 git clone https://github.com/SEU_USUARIO/dashboard-clima.git
 cd dashboard-clima
-2️⃣ Instale as dependências
+2️⃣ Instale as dependências:
 
 sh
 Copiar código
